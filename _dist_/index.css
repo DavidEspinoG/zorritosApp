@@ -1,0 +1,24 @@
+@import "../_snowpack/pkg/tailwindcss/dist/base.css";
+@import "../_snowpack/pkg/tailwindcss/dist/components.css";
+@import "../_snowpack/pkg/tailwindcss/dist/utilities.css";
+
+button {
+    background-color: rgba(79, 70, 229, 0.65);
+    color: white;
+    padding: 7px;
+    border-radius: 14px;
+    margin-top: 13px;
+    width: 200px;
+    transition: background-color, 0.4s;
+}
+button:hover {
+    background-color: rgba(79, 70, 229, 0.8);
+}
+.foxImage {
+    border-radius: 30px;
+    transform: scale(1);
+    transition: scale, 0.5s;
+}
+.foxImage:hover {
+    transform: scale(.8);
+}
