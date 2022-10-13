@@ -8,13 +8,7 @@
       name="description"
       content="Web site created using create-snowpack-app"
     />
-    <!--
-      Snowpack will replace %PUBLIC_URL% with the value you have for `baseUrl` in `snowpack.config.js`.
-      Make sure to update it with your GitHub Page URL. https://<your-username>.github.io/<your-repo-name>
-
-      More about config options:
-      - https://www.snowpack.dev/reference/configuration#buildoptions.baseurl
-    -->
+   
     <link
       rel="stylesheet"
       type="text/css"
@@ -23,14 +17,6 @@
     <title>Zorritos App</title>
   </head>
   <body>
-    <!--
-      This HTML file is a template.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-
-      Start modyfing from here.
-    -->
     <div class="py-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <p
@@ -43,14 +29,17 @@
         >
           Zorritos app
         </h3>
-        <button id="foxButton">I want a zorrito, please</button>
-        <div id="images">
+        <div class="container mx-auto flex flex-col items-center">
+          <button id="foxButton">I want a zorrito, please</button>
+          <button id="clean">No more zorritos</button>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-3 md:grid-cols-3 " id="images">
           
         </div>
       </div>
     </div>
 
-    <!-- Add more scripts here -->
     <script type="module" src="%PUBLIC_URL%/_dist_/index.js"></script>
   </body>
 </html>

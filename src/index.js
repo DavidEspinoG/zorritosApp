@@ -3,7 +3,11 @@ const API_URL = 'https://randomfox.ca/floof/';
 const foxContainer = document.querySelector('#images');
 const foxButton = document.querySelector('#foxButton');
 foxButton.addEventListener('click', () => {
-    getFox()
+    getFox();
+})
+const cleanButton = document.querySelector('#clean');
+cleanButton.addEventListener('click', () => {
+    cleanFoxContainer();
 })
 async function getFox(){
     const res = await fetch(API_URL);
@@ -11,7 +15,6 @@ async function getFox(){
     const image = document.createElement('img');
     image.dataset.src = data.image;
     image.className = 'foxImage';
-    // image.loading = 'lazy';
     
     const div = document.createElement('div');
     div.append(image)
@@ -21,4 +24,8 @@ async function getFox(){
     if(foxButton.textContent != 'Another zorrito, please'){
         foxButton.textContent = 'Another zorrito, please';
     }   
+}
+
+function cleanFoxContainer(){
+    foxContainer.innerHTML = '';
 }

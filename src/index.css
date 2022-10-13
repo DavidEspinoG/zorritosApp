@@ -2,14 +2,23 @@
 @import 'tailwindcss/dist/components.css';
 @import 'tailwindcss/dist/utilities.css';
 
-.foxImage {
-    width: 300px;
-    margin: 0 auto;
-}
 button {
     background-color: rgba(79, 70, 229, 0.65);
     color: white;
     padding: 7px;
     border-radius: 14px;
     margin-top: 13px;
+    width: 200px;
+    transition: background-color, 0.4s;
+}
+button:hover {
+    background-color: rgba(79, 70, 229, 0.8);
+}
+.foxImage {
+    border-radius: 30px;
+    transform: scale(1);
+    transition: scale, 0.5s;
+}
+.foxImage:hover {
+    transform: scale(.8);
 }
