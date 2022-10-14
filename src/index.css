@@ -15,10 +15,37 @@ button:hover {
     background-color: rgba(79, 70, 229, 0.8);
 }
 .foxImage {
+    /* width: 250px; */
     border-radius: 30px;
     transform: scale(1);
     transition: scale, 0.5s;
+    margin-bottom: 10px;
 }
 .foxImage:hover {
-    transform: scale(.8);
+    transform: scale(.9);
+}
+.foxRowContainer {
+    margin-top: 10px;
+    /* display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    gap: 10px;
+}
+.loading-skeleton {
+    background-color: #A8A8A8;
+    border-radius: 30px;
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: #CECACA;
+    }
+    100% {
+        background-color: #8D8A8A;
+    }
 }
