@@ -5,6 +5,6 @@ module.exports = {
     src: '/_dist_',
   },
   buildOptions: {
-    baseUrl: 'https://DavidEspinoG/github.io/zorritosApp',
+    baseUrl: 'https://DavidEspinoG.github.io/zorritosApp',
   },
 }
