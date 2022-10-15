@@ -1,6 +1,6 @@
-export function infiniteScroll(scroll){
-   console.log(scroll)
-    if(window.innerHeight < scroll){
-        getFox();
+import { getFox } from ".";
+export function infiniteScroll( foxNumber){
+    if(document.body.scrollHeight - window.innerHeight === window.scrollY){
+        getFox(foxNumber);
     }
 }
