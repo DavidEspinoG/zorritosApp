@@ -1,4 +1,5 @@
 {
+  "homepage": "https://DavidEspinoG/github.io/zorritosApp",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
