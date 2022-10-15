@@ -1,40 +1,30 @@
 import { registerImage } from "./lazy";
+import { loadingSkeleton } from "./loadingSkeleton";
 import { generator } from "./idGenerator";
 const API_URL = 'https://randomfox.ca/floof/';
+const foxNumber = 16;
 
-async function getFox(){
-    let columnId = generator.next().value;
-    const res = await fetch(API_URL);
-    const data = await res.json();
-    const image = document.createElement('img');
-    let mainDiv = document.getElementById(`${columnId}`);
-    let imageDiv = document.createElement('div');
-    mainDiv.append(imageDiv);
-    imageDiv.classList.add('loading-skeleton');
-    image.onload = () => {
-        let height = image.offsetHeight;
-        imageDiv.style.height = height;
+async function getFox(foxNumber){
+    loadingSkeleton(foxNumber)
+    let foxArray = []
+    for(let i = 0; i < foxNumber; i++){
+        const res = await fetch(API_URL);
+        const data = await res.json();
+        foxArray.push(data.image)
     }
-    
-    image.src = data.image;
-    image.className = 'foxImage';
-    imageDiv.append(image);
-    
-    
-    image.addEventListener('load', () => {
-        imageDiv.classList.remove('loading-skeleton');
+    foxArray.forEach((foxUrl) => {
+        let columnId = generator.next().value;
+        const image = document.createElement('img');
+        let mainDiv = document.getElementById(`${columnId}`);
+        let toReplace = mainDiv.querySelector('.loading-skeleton');
+        let imageDiv = document.createElement('div');
+        mainDiv.replaceChild(imageDiv, toReplace);
+        image.className = 'foxImage';
+        imageDiv.append(image);
+        image.src = foxUrl;
     })
 }
-for(let i = 0; i < 24; i++){
-    getFox()
-}
 
 
- 
-window.addEventListener('scroll', () => {
-    if( window.innerHeight + window.scrollY >= document.body.scrollHeight - 400){
-        for(let i = 0; i < 12; i++){
-            getFox()
-        }
-    }
-})
+getFox(foxNumber)
+
