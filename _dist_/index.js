@@ -21,7 +21,7 @@ export async function getFox(foxNumber){
         let imageDiv = document.createElement('div');
         mainDiv.replaceChild(imageDiv, toReplace);
         image.className = 'foxImage';
-        image.loading = 'lazy'
+        // image.loading = 'lazy'
         imageDiv.append(image);
         image.src = foxUrl;
     })
